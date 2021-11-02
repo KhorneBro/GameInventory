@@ -23,11 +23,18 @@ namespace GameInventory
         public MainWindow()
         {
             InitializeComponent();
-            Button button = new Button();
-            button.Width = 100;
-            button.Height = 30;
-            button.Content = "Button";
-            grid.Children.Add(button);
+        }
+
+        private void AppleImage_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            DragDrop.DoDragDrop(apple, apple.Source, DragDropEffects.Copy);
+        }
+
+        private void inventoryApple_Drop(object sender, DragEventArgs e)
+        {
+            Item item = new Item();
+            Inventory inventory = new Inventory();
+            inventory.ItemPosition[(1, 1)] = (1, item);
         }
     }
 }

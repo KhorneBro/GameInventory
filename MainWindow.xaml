@@ -6,7 +6,19 @@
         xmlns:local="clr-namespace:GameInventory"
         mc:Ignorable="d"
         Title="MainWindow">
-    <Grid x:Name="grid" MinWidth="300" MinHeight="300" Width="867" Height="677">
-        <Image  HorizontalAlignment="Left" Height="110" Margin="631,111,0,0" VerticalAlignment="Top" Width="136"/>
+    <Grid x:Name="grid" MinWidth="300" MinHeight="300" Width="900" Height="677">
+        <Grid  Background="#FF781414" x:Name="inventory" Margin="0,124,450,124" Height="450" AllowDrop="True" Drop="inventoryApple_Drop" UseLayoutRounding="False" ScrollViewer.HorizontalScrollBarVisibility="Disabled" ScrollViewer.VerticalScrollBarVisibility="Auto">
+            <Grid.RowDefinitions>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>           
+        </Grid>
+        <Image x:Name="apple" Source="/green-apple.jpg"  HorizontalAlignment="Left" Height="150" VerticalAlignment="Top" Width="150" Stretch="Fill" StretchDirection="Both" MouseDown="AppleImage_MouseDown" Margin="649,243,0,0"/>
     </Grid>
 </Window>
